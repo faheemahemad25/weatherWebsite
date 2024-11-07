@@ -1,0 +1,202 @@
+body{
+    background-color: #212121;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;   
+
+}
+/* to see All sections layout  */
+.container, .searchArea, .HeroOneArea, .heroTwoArea{
+    /* border: 2px solid red; */
+    margin-bottom: 20px;
+
+}
+
+/* ------------ Section 1  ----------------*/
+
+.searchArea{
+    /* border: 2px solid rgb(168, 168, 11); */
+    padding: 10px;
+    /* position: relative; */
+
+}
+.searchedAreaWeather_form{
+    /* border: 2px solid blue; */
+    /* padding: 10px; */
+    position: relative;
+}
+.searchedAreaWeather_form > i {
+   /* border: 2px solid green; */
+   position: absolute;
+    /* if parent have no position relative then it works with root(html) element respect. */
+    /* if you just write absolute then it can remove,override,overlap just next element.  */
+    /* if u not declare left right top bottom then by defalut parent positioned element 's top left conver fixed or show.*/
+    left: 10px; 
+   top: 8px;
+    font-size: 15px;
+    color: white;
+}
+
+.searchedAreaWeather_form > input{
+
+ /* border: 2px solid red; */
+border: none;
+background-color: #1e1e1e;
+color: wheat;
+/* outline: none; */
+padding: 0.5rem 2.5rem;
+border-radius: 5px;
+box-shadow: 1px 1px 10px rgb(83, 83, 83);
+
+}
+
+input::placeholder{
+    color: white;
+}
+
+
+/* ------------ Section 2  ----------------*/
+
+
+.HeroOneArea > div { /*LEARNING 1 📗🔖 instead of giving every div class*/
+    /* border: 2px solid rgb(13, 221, 13);     */
+    /* margin: 5px; */
+
+}
+.HeroOneArea > div > p{
+    margin: 0;
+}
+
+.HeroOneArea > p , h1 { /*LEARNING 2 📗🔖*/
+     margin: 5px; /*Removes default margin  or if you write the bydefault is removed and your new margin can overwrite. best thing.*/
+    /* padding: 0; Removes padding if any */
+    /* line-height: 1.5; Adjusts line height */
+    /* border: 2px solid green;     */
+}
+.temperatureDesignMin-Min{
+    margin: 2px;
+}
+.container{
+    background-color: rgb(228, 228, 228);
+    padding: 15px;
+    /* width: 600px; */
+    width: 40%;
+    border-radius: 20px;    
+}
+
+.HeroOneArea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 2px solid green; */
+
+}
+.cityCountryName{
+    font-weight: bold;
+    /* border: 2px solid green; */
+    font-size: 20px;
+
+}
+.daydatedetails{
+    font-weight: 450;
+    /* border: 2px solid green; */
+
+}
+.CurrentWheaterNameDesign{
+    text-align: center;
+    padding: 8px;
+    border-radius: 30px;
+    background-color: rgb(41, 41, 41);
+    color: rgb(243, 242, 242);
+    font-weight: 500;
+    width: 80px;
+    /* border: 2px solid blue; */
+}
+
+
+.weather_forecast_IconImg > img {  /*📗🔖 img which will come via api remember targert direct img element instaed of parent*/
+
+    width: 80px;
+    height: 80px;
+    /* font-size: 20px; */
+    /* border: 2px solid red; */
+    /* object-fit: fill;  */
+    /* box-shadow: 1px 1px 10px grey; */
+    /* border-radius: 10px; */
+    /* background-color: #bcbcbc; */
+    margin-top: 10px;
+
+    /* width: 50px; */
+    /* height: 50px; */
+    /* font-size: 20px; */
+    /* border: 2px solid red; */
+    /* object-fit: contain; Ensures the image fits within the box */
+    /* max-width: 100%; */
+    /* max-height: 100%; */
+
+
+    /* width: 50px; */
+    /* height: 50px; */
+    /* font-size: 20px; */
+    /* border: 2px solid red; */
+    /* object-fit: contain; */
+    /* overflow: hidden; This hides anything overflowing */
+
+}
+
+.weather_temperature{
+    font-size: 30px;
+    /* margin-top: 10px; */
+    /* border: 2px solid green; */
+}
+.temperatureDesignMin-Min{
+    /* border: 2px solid green; */
+    /* width: 160px; */
+    width: 70%;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* ------------ Section 3  ----------------*/
+
+.weather_card > div > p {
+     margin: 5px; /* by default is removed which is tooo much bydefault and now this over take. best thing. */
+}
+
+.heroTwoArea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* border: 2px solid red; */
+}
+.weather_card{
+    width: 50%;
+    margin: 2px;
+    width: calc(50% - 24px); /* Subtracts margin to fit within the container */
+    box-shadow: 1px 1px 10px #a4a5aa;
+    border-radius: 10px;
+    background-color: rgb(239, 239, 239);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+
+}
+.weather_card > i{
+    margin-right: 20px;
+     font-size: 1.5rem;  /*icon more hight weight and bold and big*/
+}
+.weather_card > p{
+    font-size: 14px;
+}
+
+
+/* .iconDetails{
+    display: flex;
+    flex-direction: column;  
+} */
+
+
+
