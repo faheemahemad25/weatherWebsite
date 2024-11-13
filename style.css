@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box; /* now child will also squeeze and border and padding will be included in defined width measn from width minus or padding takes. */
+}
+
 body{
     background-color: #212121;
     display: flex;
@@ -12,39 +16,69 @@ body{
 
 }
 
+.container{
+    background-color: rgb(228, 228, 228);
+    padding: 15px;
+    /* width: 600px; */
+    /* width: 40%; */
+    border-radius: 20px;
+    /* overflow: hidden;     */
+    /* border: 2px solid rgb(50, 236, 50); */
+}
+
 /* ------------ Section 1  ----------------*/
+
 
 .searchArea{
     /* border: 2px solid rgb(168, 168, 11); */
+    /* max-width: 100%; */
+    width: 40vw;
     padding: 10px;
     /* position: relative; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* width: 100%; */
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+       /* display: flex; 
+   justify-content: center; */
+
 
 }
 .searchedAreaWeather_form{
     /* border: 2px solid blue; */
+    width: 100%;
     /* padding: 10px; */
     position: relative;
+
+    /* Ensures the form takes up the full width when needed */
+    display: flex;
+    align-items: center;
 }
+
+
 .searchedAreaWeather_form > i {
+    /* width: 100%; */
    /* border: 2px solid green; */
    position: absolute;
     /* if parent have no position relative then it works with root(html) element respect. */
     /* if you just write absolute then it can remove,override,overlap just next element.  */
     /* if u not declare left right top bottom then by defalut parent positioned element 's top left conver fixed or show.*/
-    left: 10px; 
-   top: 8px;
+    left: 2%; 
+    top: 25%;
     font-size: 15px;
     color: white;
 }
 
-.searchedAreaWeather_form > input{
-
- /* border: 2px solid red; */
-border: none;
+.searchedAreaWeather_form  > input{
+    width: 40%;
+    /* border: 2px solid red; */
+    padding: 0.5rem 2.5rem;  /* by default padding and border adds in element width 100% + 4px + 10px bUT But solution is box-sizing: border-box; */
+/* border: none; */
 background-color: #1e1e1e;
 color: wheat;
-/* outline: none; */
-padding: 0.5rem 2.5rem;
+outline: none;
 border-radius: 5px;
 box-shadow: 1px 1px 10px rgb(83, 83, 83);
 
@@ -76,13 +110,7 @@ input::placeholder{
 .temperatureDesignMin-Min{
     margin: 2px;
 }
-.container{
-    background-color: rgb(228, 228, 228);
-    padding: 15px;
-    /* width: 600px; */
-    width: 40%;
-    border-radius: 20px;    
-}
+
 
 .HeroOneArea{
     display: flex;
@@ -170,12 +198,12 @@ input::placeholder{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* border: 2px solid red; */
+    border: 2px solid red;
 }
 .weather_card{
-    width: 50%;
     margin: 2px;
-    width: calc(50% - 24px); /* Subtracts margin to fit within the container */
+    width: calc(50% - 4px);  /* Subtracts margin to fit within the container padding can cover by " box-sizing " so now width: calc(50% - 4px);*/
+    /* width: 50%; */
     box-shadow: 1px 1px 10px #a4a5aa;
     border-radius: 10px;
     background-color: rgb(239, 239, 239);
@@ -183,14 +211,13 @@ input::placeholder{
     align-items: center;
     padding: 10px;
 
-
 }
 .weather_card > i{
     margin-right: 20px;
-     font-size: 1.5rem;  /*icon more hight weight and bold and big*/
+    font-size: 22px;  /*icon more hight weight and bold and big*/
 }
 .weather_card > p{
-    font-size: 14px;
+    font-size: 1vw;
 }
 
 
@@ -200,4 +227,41 @@ input::placeholder{
 } */
 
 
+/* ======================================================================================
+                                    media query
+ ===================================================================================== */
 
+
+ @media screen and (max-width:450px) {
+
+     .container {
+         width: 85%;
+     }
+
+     .searchedAreaWeather_form{
+        display: flex;
+        justify-content: space-between;
+        padding: 0rem;
+        /* border: 2px solid green; */
+     }
+
+     /* input{  📗🔖if same input is traget by specific style then in media query we have to tagert in same way .searchedAreaWeather_form  > input{
+      padding: 0rem;
+      } */
+     .searchedAreaWeather_form > input {
+        /* border: 2px solid rgb(12, 235, 12); */
+        width: 100%;
+        padding: 0.5rem 1.1rem;
+     }
+     .weather_card{
+        overflow: hidden;
+     }
+     .weather_card > i{
+        margin-right: 8px;
+        font-size: 15px;  /*icon more hight weight and bold and big*/
+    }
+    .weather_card > p{
+        font-size: 10px;
+    }
+
+ }
